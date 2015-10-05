@@ -1,13 +1,13 @@
-<% tmp = Item.find_or_initialize_by(asin: item.get('ASIN')) %>
-<% if !tmp.new_record? %>
-  <%= render 'items/action_w_h', item: tmp %>
+<% db_item = Item.find_or_initialize_by(asin: api_item.get('ASIN')) %>
+<% if !db_item.new_record? %>
+  <%= render 'items/action_w_h', item: db_item %>
 <% else %>
-  <%= link_to "" , ownerships_path(asin: item.get('ASIN') , type: "Want") ,
-              :class => "want-#{item.get('ASIN')} btn-want btn btn-danger btn-sm want",
+  <%= link_to "" , ownerships_path(asin: api_item.get('ASIN') , type: "Want") ,
+              :class => "want-#{api_item.get('ASIN')} btn-want btn btn-danger btn-sm want",
               :remote => true,
               :method => :post %>
-  <%= link_to "" , ownerships_path(asin: item.get('ASIN') , type: "Have") ,
-              :class => "have-#{item.get('ASIN')} btn-have btn btn-warning btn-sm have",
+  <%= link_to "" , ownerships_path(asin: api_item.get('ASIN') , type: "Have") ,
+              :class => "have-#{api_item.get('ASIN')} btn-have btn btn-warning btn-sm have",
               :remote => true,
               :method => :post %>
 <% end %>

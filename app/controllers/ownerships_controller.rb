@@ -35,7 +35,6 @@ class OwnershipsController < ApplicationController
     else
       current_user.want(@item)
     end
-
   end
 
   def destroy
