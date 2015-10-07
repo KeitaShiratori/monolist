@@ -1,0 +1,13 @@
+<figure>
+  <%= render 'items/action' , item: item if logged_in? %>
+  <% if item.large_image.present? %>
+    <%= image_tag(item.large_image , alt: item.title) %>
+  <% else %>
+    <%= image_tag("no-image.png" , alt: item.title) %>
+  <% end %>
+	<figcaption>
+		<h2><span><%= i + 1 %> 位</span><span class="badge"><%= item.cnt %></span></h2>
+		<dt>商品名</dt>
+		<dd><%= @items[i].title %></dd>
+	</figcaption>
+</figure>

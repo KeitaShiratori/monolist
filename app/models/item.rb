@@ -8,4 +8,12 @@ class Item < ActiveRecord::Base
   has_many :haves, class_name: "Have", foreign_key: "item_id", dependent: :destroy
   has_many :have_users , through: :haves, source: :user
 
+  def self.ranking type_string
+    Item.joins("Left Join ownerships on items.id = ownerships.item_id")
+        .select('items.*, count(ownerships.type) as cnt')
+        .where("ownerships.type = '#{type_string}'")
+        .group("ownerships.item_id")
+        .order("cnt DESC")
+        .limit(10)
+  end
 end

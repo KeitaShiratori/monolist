@@ -1,7 +1,9 @@
 <div class="container">
   <div class="container-inner inner-default clearfix">
     <% items.each do |item| %>
-      <%= render 'shared/item_card', item: item %>
+      <div class="row">
+        <%= render 'shared/item_card', item: item %>
+      </div>
     <% end %>
   </div>
 </div>

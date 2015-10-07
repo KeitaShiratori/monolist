@@ -1,0 +1,154 @@
+.js .gr-gallery {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.gr-room {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 85%;
+	text-align: center;
+	-webkit-perspective: 1200px;
+	-moz-perspective: 1200px;
+	perspective: 1200px;
+}
+
+.gr-wall-main,
+.gr-wall-other {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	background: #810606 image-url("damask.jpg") 0px 0px;
+}
+
+.gr-wall-main {
+	left: 0;
+}
+
+.gr-floor {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	height: 30%;
+	width: 100%;
+	background: #874d2b image-url("floor2.jpg") repeat-x 0px 0px;
+}
+
+.gr-gallery figure {
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+}
+
+.no-js .gr-gallery figure {
+	display: inline-block;
+	position: relative;
+	margin: 20px;
+}
+
+.gr-gallery figure::before {
+	content: '';
+	position: absolute;
+	width: 180%;
+	height: 150%;
+	top: -45%;
+	left: -40%;
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.4) 23%, rgba(255,255,255,0) 66%);
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.gr-gallery figure div,
+.gr-gallery figure img,
+.gr-gallery figcaption {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.gr-gallery figure div {
+	position: relative;
+}
+
+.gr-gallery figure img {
+	display: block;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 24px;
+	border-color: transparent;
+	-moz-border-image: image-url("frame.jpg") 69 74 69 64 fill repeat;
+	-webkit-border-image: image-url("frame.jpg") 69 69 70 66 repeat;
+	-o-border-image: image-url("frame.jpg") 69 69 70 66 repeat;
+	border-image: image-url("frame.jpg") 69 69 70 66 fill repeat;
+}
+
+.gr-gallery figcaption {
+	width: auto;
+	max-width: 320px;
+	display: block;
+	font-size: 5px;
+	background: #661414;
+	color: #fff;
+	padding: 10px;
+	margin-top: 20px;
+// 	position: relative;
+	text-align: left;
+}
+
+.gr-gallery figcaption h2{
+	margin: 0;	
+}
+
+.gr-gallery figcaption h2 span {
+	display: inline-block;
+	margin: 0 2px;
+}
+
+.gr-gallery figcaption dt {
+	font-size: 20px;
+}
+
+.gr-gallery figcaption dd {
+	font-size: 16px;
+}
+
+.gr-gallery nav {
+	position: absolute;
+	width: 300px;
+	height: 38px;
+	bottom: 6%;
+	left: 50%;
+	margin-left: -150px;
+	z-index: 0;
+	cursor: pointer;
+}
+
+.gr-gallery nav span {
+	width: 90px;
+	height: 100%;
+	background: image-url("steps.png");
+	float: left;
+	text-indent: -100%;
+	overflow: hidden;
+	opacity: 0.6;
+}
+
+.gr-gallery nav span:hover {
+	opacity: 1;
+}
+
+.gr-gallery nav span.gr-next {
+	background-position: top right;
+	float: right;
+}
+
+.gr-gallery .action {
+	display: block;
+	margin: -60px 0px 30px -15px;
+}
