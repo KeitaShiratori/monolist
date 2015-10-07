@@ -12,7 +12,7 @@ class Item < ActiveRecord::Base
     Item.joins("Left Join ownerships on items.id = ownerships.item_id")
         .select('items.*, count(ownerships.type) as cnt')
         .where("ownerships.type = '#{type_string}'")
-        .group("ownerships.item_id")
+        .group("ownerships.item_id, items.id")
         .order("cnt DESC")
         .limit(10)
   end
